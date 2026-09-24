@@ -690,30 +690,39 @@ input::placeholder {
 }
 /* Pencarian Transaksi */
 
+/* Pencarian Transaksi */
+
 .pencarian-transaksi {
-  margin-top: 15px;
+  margin-top: 16px;
 }
 
 .pencarian-transaksi label {
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 7px;
   font-size: 13px;
-  font-weight: bold;
+  font-weight: 600;
   color: #444;
 }
 
 .pencarian-transaksi input {
   width: 100%;
   box-sizing: border-box;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 15px;
-  background: white;
+  padding: 13px 15px;
+  border: 1px solid #e1e4e8;
+  border-radius: 10px;
+  background: #f9fafb;
+  color: #222;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.pencarian-transaksi input::placeholder {
+  color: #999;
 }
 
 .pencarian-transaksi input:focus {
   outline: none;
+  background: #fff;
   border-color: #999;
   box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
 }
