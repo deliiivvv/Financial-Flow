@@ -698,3 +698,4 @@ function updateTargetDariTransaksi() {
   tampilkanTargetTabungan();
 
 }
+updateTargetDariTransaksi();
