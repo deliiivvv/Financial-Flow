@@ -1,1 +1,160 @@
+<div class="app">
 
+  <h1>Financial Flow</h1>
+  <p class="subtitle">Kelola keuanganmu dengan lebih mudah</p>
+
+  <div class="summary">
+
+    <div class="card">
+      <span>Saldo</span>
+      <strong id="saldo">Rp0</strong>
+    </div>
+
+    <div class="card">
+      <span>Pemasukan</span>
+      <strong id="pemasukan">Rp0</strong>
+    </div>
+
+    <div class="card">
+      <span>Pengeluaran</span>
+      <strong id="pengeluaran">Rp0</strong>
+    </div>
+
+  </div>
+<div class="grafik-container">
+
+  <h2>Ringkasan Keuangan</h2>
+
+  <div class="grafik">
+    <div class="bar-group">
+      <div
+        id="barPemasukan"
+        class="bar pemasukan">
+      </div>
+      <span>Pemasukan</span>
+    </div>
+
+    <div class="bar-group">
+      <div
+        id="barPengeluaran"
+        class="bar pengeluaran">
+      </div>
+      <span>Pengeluaran</span>
+    </div>
+  </div>
+
+</div>
+  <div class="form-transaksi">
+
+    <h2>Tambah Transaksi</h2>
+
+    <label>Jenis Transaksi</label>
+    <select id="jenis">
+      <option value="pemasukan">Pemasukan</option>
+      <option value="pengeluaran">Pengeluaran</option>
+    </select>
+
+    <label>Nama Transaksi</label>
+    <input
+      type="text"
+      id="nama"
+      placeholder="Contoh: Gaji"
+    >
+
+    <label>Kategori</label>
+    <select id="kategori">
+      <option value="Gaji">Gaji</option>
+      <option value="Makanan">Makanan</option>
+      <option value="Transportasi">Transportasi</option>
+      <option value="Belanja">Belanja</option>
+      <option value="Tagihan">Tagihan</option>
+      <option value="Hiburan">Hiburan</option>
+      <option value="Tabungan">Tabungan</option>
+      <option value="Lainnya">Lainnya</option>
+    </select>
+
+<label>Metode Pembayaran</label>
+<select id="metode">
+  <option value="Cash">Cash</option>
+  <option value="Transfer">Transfer</option>
+  <option value="E-Wallet">E-Wallet</option>
+  <option value="Debit">Debit</option>
+  <option value="Kredit">Kredit</option>
+</select>
+
+    <label>Nominal</label>
+    <input
+      type="number"
+      id="nominal"
+      placeholder="Contoh: 500000"
+    >
+
+    <label>Tanggal</label>
+    <input
+      type="date"
+      id="tanggal"
+    >
+
+    <button id="simpanTransaksi">
+      Simpan Transaksi
+    </button>
+
+  </div>
+  <div class="anggaran-container">
+
+  <h2>Anggaran Bulanan</h2>
+
+  <label>Anggaran Bulan Ini</label>
+
+  <input
+    type="number"
+    id="anggaran"
+    placeholder="Contoh: 3000000"
+  >
+
+  <button id="simpanAnggaran">
+    Simpan Anggaran
+  </button>
+
+  <div class="anggaran-info">
+
+    <span>Anggaran</span>
+    <strong id="totalAnggaran">Rp0</strong>
+
+  </div>
+
+  <div class="anggaran-info">
+
+    <span>Terpakai</span>
+    <strong id="terpakaiAnggaran">Rp0</strong>
+
+  </div>
+
+  <div class="anggaran-info">
+
+    <span>Sisa Anggaran</span>
+    <strong id="sisaAnggaran">Rp0</strong>
+
+  </div>
+
+</div>
+
+  <div class="transaksi">
+
+    <h2>Transaksi Terbaru</h2>
+<div class="filter-transaksi">
+
+  <label>Filter Bulan</label>
+
+  <select id="filterBulan">
+    <option value="semua">Semua Transaksi</option>
+  </select>
+
+</div>
+    <div id="daftarTransaksi">
+      <p class="kosong">Belum ada transaksi</p>
+    </div>
+
+  </div>
+
+</div>
