@@ -66,6 +66,7 @@ function simpanData() {
 
 
 function updateFinancialFlow() {
+  
 
   let totalPemasukan = 0;
   let totalPengeluaran = 0;
@@ -558,11 +559,12 @@ document
         return;
       }
 
-      targetTabunganData = {
-        nama: namaTarget,
-        target: target,
-        terkumpul: terkumpul
-      };
+     targetTabunganData = {
+  nama: namaTarget,
+  target: target,
+  terkumpul: terkumpul,
+  awal: terkumpul
+}
 
       localStorage.setItem(
         "financialFlowTarget",
@@ -663,3 +665,36 @@ function tampilkanTargetTabungan() {
 
 
 tampilkanTargetTabungan();
+function updateTargetDariTransaksi() {
+
+  if (!targetTabunganData) {
+    return;
+  }
+
+  let totalTabungan =
+    targetTabunganData.awal || 0;
+
+  transaksi.forEach(function (item) {
+
+    if (
+      item.jenis === "pengeluaran" &&
+      item.kategori === "Tabungan"
+    ) {
+
+      totalTabungan += item.nominal;
+
+    }
+
+  });
+
+  targetTabunganData.terkumpul =
+    totalTabungan;
+
+  localStorage.setItem(
+    "financialFlowTarget",
+    JSON.stringify(targetTabunganData)
+  );
+
+  tampilkanTargetTabungan();
+
+}
