@@ -506,3 +506,160 @@ updateFilterBulan();
 updateFinancialFlow();
 
 updateAnggaran();
+// ===============================
+// TARGET TABUNGAN
+// ===============================
+
+let targetTabunganData =
+  JSON.parse(
+    localStorage.getItem("financialFlowTarget")
+  ) || null;
+
+
+document
+  .getElementById("simpanTarget")
+  .addEventListener(
+    "click",
+    function () {
+
+      const namaTarget =
+        document.getElementById("namaTarget").value;
+
+      const target =
+        Number(
+          document.getElementById("targetTabungan").value
+        );
+
+      const terkumpul =
+        Number(
+          document.getElementById("tabunganTerkumpul").value
+        );
+
+      if (
+        !namaTarget ||
+        !target ||
+        target <= 0 ||
+        terkumpul < 0
+      ) {
+
+        alert(
+          "Mohon isi data target tabungan dengan benar."
+        );
+
+        return;
+      }
+
+      if (terkumpul > target) {
+
+        alert(
+          "Tabungan terkumpul tidak boleh lebih besar dari target."
+        );
+
+        return;
+      }
+
+      targetTabunganData = {
+        nama: namaTarget,
+        target: target,
+        terkumpul: terkumpul
+      };
+
+      localStorage.setItem(
+        "financialFlowTarget",
+        JSON.stringify(targetTabunganData)
+      );
+
+      tampilkanTargetTabungan();
+
+    }
+  );
+
+
+function tampilkanTargetTabungan() {
+
+  const hasil =
+    document.getElementById("hasilTarget");
+
+  if (!targetTabunganData) {
+
+    hasil.innerHTML =
+      '<p class="kosong">Belum ada target tabungan</p>';
+
+    return;
+  }
+
+  const target =
+    targetTabunganData.target;
+
+  const terkumpul =
+    targetTabunganData.terkumpul;
+
+  const sisa =
+    target - terkumpul;
+
+  const progress =
+    (terkumpul / target) * 100;
+
+  hasil.innerHTML = `
+
+    <div class="target-hasil">
+
+      <div class="target-header">
+
+        <strong>
+          🎯 ${targetTabunganData.nama}
+        </strong>
+
+      </div>
+
+      <div class="target-info">
+
+        <span>Target</span>
+
+        <strong>
+          ${formatRupiah(target)}
+        </strong>
+
+      </div>
+
+      <div class="target-info">
+
+        <span>Terkumpul</span>
+
+        <strong>
+          ${formatRupiah(terkumpul)}
+        </strong>
+
+      </div>
+
+      <div class="target-info">
+
+        <span>Sisa</span>
+
+        <strong>
+          ${formatRupiah(sisa)}
+        </strong>
+
+      </div>
+
+      <div class="target-progress">
+
+        <div
+          class="target-progress-bar"
+          style="width: ${progress}%">
+        </div>
+
+      </div>
+
+      <div class="target-persentase">
+        ${progress.toFixed(1)}% tercapai
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+tampilkanTargetTabungan();
