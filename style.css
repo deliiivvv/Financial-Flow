@@ -1,1 +1,555 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 20px;
+}
 
+.app {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  text-align: center;
+  margin: 0;
+  font-size: 28px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #777;
+  margin-top: 8px;
+  margin-bottom: 25px;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.card {
+  padding: 15px;
+  background: #f7f8fa;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.card span {
+  display: block;
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 8px;
+}
+
+.card strong {
+  font-size: 17px;
+}
+
+#tambahTransaksi {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background: #222;
+  color: white;
+}
+
+.transaksi {
+  margin-top: 25px;
+}
+
+.transaksi h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.kosong {
+  text-align: center;
+  color: #999;
+  padding: 20px;
+  background: #f7f8fa;
+  border-radius: 10px;
+}
+.form-transaksi {
+  margin-top: 25px;
+  padding: 20px;
+  background: #f7f8fa;
+  border-radius: 12px;
+}
+
+.form-transaksi h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.form-transaksi label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.form-transaksi input,
+.form-transaksi select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  background: white;
+}
+
+#simpanTransaksi {
+  width: 100%;
+  margin-top: 20px;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background: #222;
+  color: white;
+}
+.transaksi-item {
+  padding: 16px;
+  margin-bottom: 12px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.transaksi-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.transaksi-nama {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.transaksi-nominal {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.transaksi-info {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #777;
+}
+
+.transaksi-tombol {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.transaksi-tombol button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.transaksi-edit {
+  background: #eee;
+}
+
+.transaksi-hapus {
+  background: #f3f3f3;
+}
+.label-transaksi {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 4px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.label-pemasukan {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.label-pengeluaran {
+  background: #ffebee;
+  color: #c62828;
+}
+/* Dashboard Ringkasan */
+
+.summary {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.card {
+  padding: 20px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.card span {
+  display: block;
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.card strong {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Tampilan tablet dan HP */
+
+@media (max-width: 600px) {
+
+  .summary {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .card strong {
+    font-size: 18px;
+  }
+
+}
+/* Grafik Keuangan */
+
+.grafik-container {
+  margin-top: 25px;
+  padding: 20px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+}
+
+.grafik-container h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.grafik {
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 60px;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #f7f8fa;
+  border-radius: 12px;
+}
+
+.bar-group {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+}
+
+.bar {
+  width: 55px;
+  min-height: 5px;
+  border-radius: 8px 8px 0 0;
+  transition: height 0.3s ease;
+}
+
+.bar-group span {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.pemasukan {
+  background: #4caf50;
+}
+
+.pengeluaran {
+  background: #f44336;
+}
+
+@media (max-width: 600px) {
+
+  .grafik {
+    gap: 35px;
+  }
+
+  .bar {
+    width: 45px;
+  }
+
+}
+.filter-transaksi {
+  margin-bottom: 15px;
+  padding: 12px;
+  background: #f7f8fa;
+  border-radius: 10px;
+}
+
+.filter-transaksi label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.filter-transaksi select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: white;
+  font-size: 14px;
+}
+.anggaran-container {
+  margin-top: 25px;
+  padding: 20px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+}
+
+.anggaran-container h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.anggaran-container label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.anggaran-container input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+#simpanAnggaran {
+  width: 100%;
+  margin-top: 12px;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background: #222;
+  color: white;
+}
+
+.anggaran-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding: 12px;
+  background: #f7f8fa;
+  border-radius: 8px;
+}
+
+.anggaran-info span {
+  font-size: 14px;
+  color: #777;
+}
+
+.anggaran-info strong {
+  font-size: 15px;
+}
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.card strong {
+  letter-spacing: -0.3px;
+}
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #777;
+  margin-top: 0;
+}
+#simpanTransaksi {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#simpanTransaksi:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
+}
+
+#simpanTransaksi:active {
+  transform: translateY(0);
+}
+.anggaran-container {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.anggaran-info {
+  transition: transform 0.2s ease;
+}
+
+.anggaran-info:hover {
+  transform: translateX(2px);
+}
+
+#simpanAnggaran {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#simpanAnggaran:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
+}
+
+#simpanAnggaran:active {
+  transform: translateY(0);
+}
+.transaksi-item {
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.transaksi-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
+}
+
+.transaksi-nominal {
+  letter-spacing: -0.2px;
+}
+
+.transaksi-tombol button {
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.transaksi-tombol button:hover {
+  transform: translateY(-1px);
+  opacity: 0.8;
+}
+.grafik-container {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.grafik {
+  border: 1px solid #f0f0f0;
+}
+
+.bar {
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.bar-group span {
+  color: #555;
+}
+.form-transaksi {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.form-transaksi input,
+.form-transaksi select {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-transaksi input:focus,
+.form-transaksi select:focus {
+  outline: none;
+  border-color: #999;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.form-transaksi label {
+  font-size: 13px;
+  color: #444;
+}
+.filter-transaksi {
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+}
+
+.filter-transaksi select {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.filter-transaksi select:focus {
+  outline: none;
+  border-color: #999;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+.app {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.app {
+  border: 1px solid #f0f0f0;
+}
+
+body {
+  color: #222;
+}
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+  opacity: 0.9;
+}
+
+input,
+select,
+button {
+  font-family: inherit;
+}
+
+input::placeholder {
+  color: #aaa;
+}
