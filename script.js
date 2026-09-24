@@ -546,7 +546,16 @@ document
 
     }
   );
+document
+  .getElementById("cariTransaksi")
+  .addEventListener(
+    "input",
+    function () {
 
+      tampilkanTransaksi();
+
+    }
+  );
 
 // ===============================
 // ANGGARAN
