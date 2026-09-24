@@ -157,6 +157,10 @@ function tampilkanTransaksi() {
 
   const filter =
     document.getElementById("filterBulan").value;
+  const pencarian =
+  document.getElementById("cariTransaksi").value
+    .toLowerCase()
+    .trim();
 
 
   if (transaksi.length === 0) {
@@ -174,17 +178,30 @@ function tampilkanTransaksi() {
 
   transaksi.forEach(function (item, index) {
 
-    if (
-      filter !== "semua" &&
-      (
-        !item.tanggal ||
-        !item.tanggal.startsWith(filter)
-      )
-    ) {
+    const cocokBulan =
+  filter === "semua" ||
+  (
+    item.tanggal &&
+    item.tanggal.startsWith(filter)
+  );
 
-      return;
+const teksPencarian =
+  (
+    item.nama +
+    " " +
+    item.kategori +
+    " " +
+    (item.metode || "")
+  ).toLowerCase();
 
-    }
+const cocokPencarian =
+  teksPencarian.includes(pencarian);
+
+if (!cocokBulan || !cocokPencarian) {
+
+  return;
+
+}
 
 
     adaTransaksi = true;
