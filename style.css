@@ -621,3 +621,58 @@ input::placeholder {
 #hasilTarget {
   margin-top: 20px;
 }
+/* Hasil Target Tabungan */
+
+.target-hasil {
+  margin-top: 20px;
+  padding: 18px;
+  background: #f7f8fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.target-header {
+  margin-bottom: 15px;
+  font-size: 17px;
+}
+
+.target-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.target-info span {
+  font-size: 13px;
+  color: #777;
+}
+
+.target-info strong {
+  font-size: 14px;
+}
+
+.target-progress {
+  width: 100%;
+  height: 12px;
+  margin-top: 18px;
+  background: #e5e7eb;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.target-progress-bar {
+  height: 100%;
+  background: #222;
+  border-radius: 20px;
+  transition: width 0.4s ease;
+}
+
+.target-persentase {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  color: #555;
+}
