@@ -688,3 +688,32 @@ input::placeholder {
   font-weight: bold;
   color: #555;
 }
+/* Pencarian Transaksi */
+
+.pencarian-transaksi {
+  margin-top: 15px;
+}
+
+.pencarian-transaksi label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #444;
+}
+
+.pencarian-transaksi input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  background: white;
+}
+
+.pencarian-transaksi input:focus {
+  outline: none;
+  border-color: #999;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
